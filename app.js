@@ -19,6 +19,7 @@ function keyClick(e){
     }
     else if(key == "equal"){
         const currentValue = parseFloat(input.value)
+        let result
         if(operator == "+"){
             result = lastValue + currentValue
         }
@@ -32,6 +33,25 @@ function keyClick(e){
             result = lastValue / currentValue
         }
         input.value = result
+    }
+    else if(key == "ac"){
+        input.value = ""
+        lastValue = ""
+        currentValue =""
+    }
+    else if(key == "plus-minus"){
+        let result
+        if(input.value >= 0){
+            result = input.value - (input.value*2)
+        }else{
+            result = Math.abs(input.value)
+        }
+        input.value = null
+        input.value = parseFloat(result)
+        result = null
+    }
+    else if(key == "percent"){
+        input.value = input.value / 100
     }
    })
 
